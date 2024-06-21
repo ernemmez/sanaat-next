@@ -22,6 +22,15 @@ const nextConfig = {
         protocol: "https",
         hostname: "sanaat-admin-a83e27304db1.herokuapp.com",
       },
+      {
+        protocol: "https",
+        hostname: "sanaat-admin-a83e27304db1.herokuapp.com",
+        pathname: "/uploads/**",
+      },
+      {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+      },
     ],
   },
 };

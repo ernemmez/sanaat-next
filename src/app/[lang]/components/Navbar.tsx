@@ -63,7 +63,7 @@ const navLinks = [
     "text": "Sanaat Hakkında"
   },
   {
-    "id": 26,
+    "id": 25,
     "url": "/sanaat-takvim",
     "text": "Sanaat Takvim"
   },
