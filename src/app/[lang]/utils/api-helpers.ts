@@ -13,8 +13,7 @@ export function getStrapiMedia(url: string | null) {
   }
 
   // Otherwise prepend the URL path with the Strapi URL
-  // return `${getStrapiURL()}${url}`;
-  return url;
+  return `${getStrapiURL()}${url}`;
 }
 
 export function formatDate(dateString: string) {
