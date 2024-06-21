@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "sanaat.org",
       },
+      {
+        protocol: "https",
+        hostname: "sanaat-admin-a83e27304db1.herokuapp.com",
+      },
     ],
   },
 };
