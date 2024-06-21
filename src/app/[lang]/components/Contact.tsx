@@ -84,7 +84,7 @@ export default function Contact() {
                   </div>
                   {!isMobile && <div className="relative lg:col-span-2 pb-12 lg:pb-0">
                     <Image
-                        src={`${getStrapiMedia("/uploads/error_80551f0221.png")}`}
+                        src={`${getStrapiMedia("https://res.cloudinary.com/hwisxzh7t/image/upload/v1719011334/error_1a9d26dccb.webp")}`}
                         className="w-2/3 animate-floting lg:w-[400px] m-auto"
                         width={400}
                         height={400}

@@ -58,7 +58,7 @@ const AboutPage: React.FC = () => {
         </div>
         <div className="relative w-full h-[600px]">
           <Image
-            src={`${getStrapiMedia("/uploads/hakkinda_page_89c8c5a276.webp")}`}
+            src={`${getStrapiMedia("https://res.cloudinary.com/hwisxzh7t/image/upload/v1719011349/hakkinda_page_abe108457a.webp")}`}
             alt="Sanaat | Sanaat Nedir?"
             layout="fill"
             objectFit="cover"
