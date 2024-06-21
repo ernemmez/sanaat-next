@@ -30,7 +30,7 @@ export default function Error() {
           </div>
           <div className="home__img justify-self-center">
             <Image
-              src={`${getStrapiMedia("/uploads/error_page_22b5fef088.png")}`}
+              src={`${getStrapiMedia("/uploads/error_80551f0221.png")}`}
               className="w-64 animate-floting lg:w-[400px]"
               width={400}
               height={400}
