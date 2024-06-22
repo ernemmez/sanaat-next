@@ -32,6 +32,7 @@ interface HightlightedTopicCardProps {
     shortDesc: string;
     alignment?: "l" | "r";
     createdBy?: string;
+    length: number;
 }
 
 export const HightlightedBlogCard: React.FC<HightlightedTopicCardProps> = ({
@@ -40,6 +41,7 @@ export const HightlightedBlogCard: React.FC<HightlightedTopicCardProps> = ({
     imgUrl,
     shortDesc,
     createdBy,
+    length
 }) => {
 
     return (
@@ -49,11 +51,12 @@ export const HightlightedBlogCard: React.FC<HightlightedTopicCardProps> = ({
                 alt={title}
                 width={346}
                 height={460}
-                quality={100}
+                quality={70}
                 className="w-full h-full object-cover relative transition transform hover:scale-105"
+                placeholder="blur"
             />
             <div className="font-[500] text-sm text-sanaat-black absolute top-4 left-4 flex items-center gap-3 bg-white pt-1 pl-1 pr-[6px] pb-[0.5px] text-center rounded-xl shadow-xl">
-               12 Başlık
+               {length} Başlık
             </div>
             <div className="absolute bottom-0 pl-4 pb-3">
                 {title && <div className="font-normal text-sanaat-text mb-2 top-4 left-4">{title}</div>}
@@ -127,7 +130,19 @@ export default function EncyclopediaList({ data, isTopicPage }: HightlightedTopi
             </div>
             <div className="flex flex-col lg:flex-row flex-wrap justify-start items-stretch gap-10">
                 {filteredEncyclopediasData?.length > 0 ? filteredEncyclopediasData?.map((encyclopedia: any, index: number) => {
-                    return <HightlightedBlogCard key={index} title={encyclopedia?.attributes?.name} slug={encyclopedia?.attributes?.slug} imgUrl={getStrapiMedia(encyclopedia?.attributes?.coverImage?.data[0]?.attributes?.url)} shortDesc={encyclopedia?.attributes?.shortDesc}  />
+                    const imageUrl = encyclopedia?.attributes?.coverImage?.data && encyclopedia.attributes.coverImage.data.length > 0
+                    ? getStrapiMedia(encyclopedia.attributes.coverImage.data[0]?.attributes?.url)
+                    : "";
+                    return (
+                        <HightlightedBlogCard 
+                            key={index} 
+                            title={encyclopedia?.attributes?.name} 
+                            slug={encyclopedia?.attributes?.slug} 
+                            imgUrl={imageUrl} 
+                            shortDesc={encyclopedia?.attributes?.shortDesc}
+                            length={filteredEncyclopediasData?.length}
+                        />
+                    )
                 }) : <div className="italic m-auto my-24">Üzgünüz, şu an bu kategoride ansiklopedi bulunmamaktadır.</div>}                
             </div>
         </section>
